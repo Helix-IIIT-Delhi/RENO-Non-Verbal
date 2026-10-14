@@ -1,0 +1,24 @@
+model:
+  num_emotions: 8
+  mamba_dim: 768
+  other_fm_dim: 768
+  hidden_dim: 512
+  use_mamba: true
+  use_other_fm: true
+
+training:
+  batch_size: 32
+  num_epochs: 100
+  learning_rate: 0.001
+  weight_decay: 1e-5
+  optimizer: adam
+  loss_weights:
+    ce: 1.0
+    renyi: 0.1
+
+data:
+  sample_rate: 16000
+  num_workers: 4
+
+device: cuda
+seed: 42
